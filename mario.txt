@@ -1,0 +1,40 @@
+// Mario
+
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    // declare variables
+    int x;
+    int y;
+    
+    do
+    {
+        // ask for the height of the pyramid
+        printf("Please enter a number for the pyramid height: \n");
+        x = GetInt();
+        y = x;
+    } 
+    
+    while (x <= 0 || x > 23);
+
+    if (x >= 1 && x <= 23)
+    {
+        for (int i = 0; i < y; i++)
+        {
+            // print spaces
+            for (int i = 1; i < x; i++)
+            {
+                printf(" ");
+            }
+            // print hashes
+            for (int i = y; i + 2 > x; i--)
+            {
+                printf("#");
+            }
+            printf("\n");
+            x = x - 1;
+        }
+    }
+}

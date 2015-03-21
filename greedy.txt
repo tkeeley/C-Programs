@@ -1,0 +1,65 @@
+// Greedy
+
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
+
+// set values of coins
+int quarter = 25;
+int dime = 10;
+int nickel = 5;
+int penny = 1;
+
+int main(void)
+{
+    int coin_counter = 0;
+    //
+    float f = 0;
+    do
+    {
+        // asks for user input
+        printf("O hai! How much change is owed? \n");
+        f = GetFloat();
+    } while (f <= 0);
+    
+    // convert to cents
+    int i = 0;
+    i = round(f * 100);
+    
+    /*
+    determines number of coins based on coin value. 
+    Starts with quarter value and runs though each
+    coin until target total is reached
+    */
+    
+    while (i >= quarter)
+    {   
+        i -= quarter;
+
+        coin_counter++;
+    }
+    
+    while (i >= dime)
+    {    
+        i -= dime;
+
+        coin_counter++;
+    }   
+    
+    while (i >= nickel)
+    {    
+        i -= nickel;
+
+        coin_counter++;
+    }
+    
+    while (i >= penny)
+    {
+        i -= penny;
+
+        coin_counter++;
+    }
+
+    // print coins used
+    printf("%d\n", coin_counter);
+}
