@@ -1,5 +1,5 @@
 /*
-Caesar Chiper - User inputs key asCLA
+Caesar Chiper - User inputs key as CLA
 */
 
 #include <cs50.h>
